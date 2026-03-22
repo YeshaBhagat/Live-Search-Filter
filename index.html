@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Search Filter</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #d9f2ed, #acb6e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        #search {
+            padding: 10px;
+            width: 90%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        #search:focus {
+            border-color: #6c63ff;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f1f1f1;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        li:hover {
+            background: #89c4cd;
+            color: white;
+        }
+
+        #noResults {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Live Search</h1>
+
+        <input type="text" id="search" placeholder="Search fruits...">
+
+        <ul id="list">
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Cherry</li>
+            <li>Mango</li>
+            <li>Grapes</li>
+            <li>Kiwi</li>
+        </ul>
+
+        <p id="noResults">No results found!</p>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('search');
+        const listItems = document.querySelectorAll('#list li');
+        const noResults = document.getElementById('noResults');
+
+        searchInput.addEventListener('input', function () {
+            const query = this.value.toLowerCase();
+            let matchFound = false;
+
+            listItems.forEach(function (item) {
+                const text = item.textContent.toLowerCase();
+
+                if (text.includes(query)) {
+                    item.style.display = "block";
+                    matchFound = true;
+                } else {
+                    item.style.display = "none";
+                }
+            });
+
+            // Show / hide "No results"
+            if (matchFound) {
+                noResults.style.display = "none";
+            } else {
+                noResults.style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+</html>
