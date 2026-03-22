@@ -49,9 +49,7 @@ Live-Search-Filter/
 
 1. Download or clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/live-search-filter.git
-   ```
+   `(https://github.com/YeshaBhagat/Live-Search-Filter.git)`
 
 2. Open the project folder
 
