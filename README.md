@@ -70,9 +70,9 @@ Live-Search-Filter/
 
 ## 📸 Screenshot
 
-(live-search-filter-demo1.png)
-(live-search-filter-demo2.png)
-(live-search-filter-demo3.png)
+![Live-Search-Filter](live-search-filter-demo1.png)
+![Live-Search-Filter](live-search-filter-demo2.png)
+![Live-Search-Filter](live-search-filter-demo3.png)
 
 
 
